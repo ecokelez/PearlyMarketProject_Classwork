@@ -21,14 +21,17 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class ReusableMethods {
 
-    public static String getScreenshot(String name) {
+    static JavascriptExecutor jse;
+
+    public static String getScreenshot(String testerName, String testName) {
+        waitFor(1);
         // naming the screenshot with the current date to avoid duplication
-        String date = new SimpleDateFormat("yyyy-MM-dd-hhmmss").format(new Date());
+        String date = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss").format(new Date());
         // TakesScreenshot is an interface of selenium that takes the screenshot
         TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
         File source = ts.getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
-        String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + "-" + date + ".png";
+        String target = "src/test/java/pearlymarket/testoutputs/screenshots/" + testerName + "/" + testName + "-" + date + ".png";
         File finalDestination = new File(target);
         // save the screenshot to the path given
         try {
@@ -55,6 +58,22 @@ public class ReusableMethods {
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
+    }
+
+    public static void clickOnLocation(int x, int y, WebElement element) {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(element).moveByOffset(x, y).click().build().perform();
+    }
+
+    public static void keyboardArrowUp() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.keyDown(Keys.ARROW_UP).keyUp(Keys.ARROW_UP).perform();
+    }
+
+    public static void keyboardArrowDown() {
+        waitFor(1);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).build().perform();
     }
 
     //==========Returns a list of string given a list of Web Element====////
@@ -94,6 +113,11 @@ public class ReusableMethods {
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public static boolean waitForInvisibility(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     public static WebElement waitForVisibility(By locator, int timeout) {
@@ -180,6 +204,17 @@ public class ReusableMethods {
         return select.getFirstSelectedOption();
     }
 
+    public static WebElement selectFromDropdown(WebElement dropdown, String text) {
+        Select select = new Select(dropdown);
+        select.selectByVisibleText(text);
+        return select.getFirstSelectedOption();
+    }
+
+    public static WebElement getSelectedOptionFromDropdown(WebElement dropdown) {
+        Select select = new Select(dropdown);
+        return select.getFirstSelectedOption();
+    }
+
 
     public static void verifyElementDisplayed(By by) {
         try {
@@ -215,5 +250,42 @@ public class ReusableMethods {
         }
     }
 
+
+    public static void scrollByJS(int scrollAmountByPixel) {
+        jse = ((JavascriptExecutor) Driver.getDriver());
+        jse.executeScript("window.scrollBy(0,"+ scrollAmountByPixel + ")");
+        waitFor(2);
+    }
+
+    public static void scrollIntoViewJS(WebElement element) {
+        jse = ((JavascriptExecutor) Driver.getDriver());
+        jse.executeScript("arguments[0].scrollIntoView(true)", element);
+    }
+
+    public static void scrollToBottomJS() {
+        jse = ((JavascriptExecutor) Driver.getDriver());
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
+    public static void scrollToTopJS() {
+        jse = ((JavascriptExecutor) Driver.getDriver());
+        jse.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+    }
+
+    //    Bu metot ile belirli bir elemente JS executor ile tiklanabilir
+    public static void clickByJS(WebElement element) {
+        jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].click();", element);
+    }
+
+    public static void typeWithJS(WebElement element, String text) {
+        jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].setAttribute('value', '" + text + "');", element);
+    }
+
+    public static String getValueFromInputJS(WebElement element) {
+        jse = (JavascriptExecutor) Driver.getDriver();
+        return (String) jse.executeScript("return arguments[0].getAttribute('value');", element);
+    }
 
 }
