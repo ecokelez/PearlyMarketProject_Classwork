@@ -9,9 +9,9 @@ import java.util.Date;
 
 public class ExtentReportsUtils {
 
-    private static ExtentReports extentReports;
-    private static ExtentHtmlReporter extentHtmlReporter;
-    private static ExtentTest extentTest;
+    protected static ExtentReports extentReports;
+    protected static ExtentHtmlReporter extentHtmlReporter;
+   protected static ExtentTest extentTest;
 
     public void extentReportsSetUp(String testerName, String testName) {
 //      REPORT  PATH
