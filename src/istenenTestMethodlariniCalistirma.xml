@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="istenen methodlar">
+    <test name="method">
+        <classes>
+            <class name="tests.ersoy.US22.US22_TC03">
+                <methods>
+                    <include name="test01"/>
+                </methods>
+            </class>
+            <class name="tests.ersoy.US22.US22_TC02">
+                <methods>
+                    <exclude name="test01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

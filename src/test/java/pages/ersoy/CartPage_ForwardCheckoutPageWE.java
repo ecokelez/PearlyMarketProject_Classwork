@@ -14,6 +14,12 @@ public class CartPage_ForwardCheckoutPageWE {
     @FindBy(xpath = "//*[@class='w-icon-cart'][1]")
     public WebElement cartButton;
 
+    @FindBy (xpath = "//*[@class='button wc-forward']")
+    public WebElement viewCartButton;
+
+    @FindBy (xpath = "//*[@class='btn btn-success btn-md'][1]")
+    public WebElement greenViewCartButton;
+
     @FindBy (xpath = "//*[text()='Checkout'][1]")
     public WebElement checkoutButton;
 }

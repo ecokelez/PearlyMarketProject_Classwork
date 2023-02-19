@@ -105,6 +105,21 @@ public  class ErsoyPMP {
     @FindBy (xpath = "//*[@class='order-total']")
     public WebElement totalAmount;
 
+     /*
+    Billing Adress
+     @FindBy (xpath = "//*[@id='billing_first_name']")
+    public WebElement firstnameTextBox;
+
+    @FindBy (xpath = "//*[@id='select2-billing_country-container']")
+    public  WebElement countryNameTextBox;
+
+    @FindBy (xpath = "//*[@id='select2-billing_country-container']")
+    public WebElement countryNameTextBox02;
+
+    @FindBy (xpath = "//*[@id='billing_address_1']")
+    public WebElement streetAdressTextBox;
+     */
+
 
 
 

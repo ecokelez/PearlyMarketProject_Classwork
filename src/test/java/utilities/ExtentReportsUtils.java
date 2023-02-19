@@ -13,7 +13,7 @@ public class ExtentReportsUtils {
     protected static ExtentHtmlReporter extentHtmlReporter;
    protected static ExtentTest extentTest;
 
-    public void extentReportsSetUp(String testerName, String testName) {
+    public static void extentReportsSetUp(String testerName, String testName) {
 //      REPORT  PATH
         String currentTime = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss").format(new Date());
         String path = System.getProperty("user.dir") + "\\test-output\\reports\\" + testerName + "\\" + currentTime + ".html";
@@ -36,11 +36,11 @@ public class ExtentReportsUtils {
         extentTest = extentReports.createTest(testName, testName + " Report");
     }
 
-    public ExtentTest extentTest() {
+    public static ExtentTest extentTest() {
         return extentTest;
     }
 
-    public void extentFlush() {
+    public static void extentFlush() {
         extentReports.flush();
     }
 

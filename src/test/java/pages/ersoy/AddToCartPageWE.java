@@ -14,7 +14,7 @@ public class AddToCartPageWE {
     @FindBy(xpath = "//*[@class='product_meta no-brand-image']")
     public WebElement productInfoButton;
 
-    @FindBy (xpath = "//*[@name='add-to-cart']") //*[@name='add-to-cart']
+    @FindBy (xpath = "//*[@name='add-to-cart']")
     public WebElement addToCartButton;
 
     @FindBy (xpath = "//*[@class='woocommerce-notices-wrapper']")

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ErsoyRM {
+public class ReusableM {
 
     //========ScreenShot(Syafanın resmini alma)=====//
     public static String getScreenshot(String name) throws IOException {

@@ -26,4 +26,20 @@ public class BillingDetailsPageWE {
     @FindBy (xpath = "//*[@id='billing_postcode']")
     public WebElement zipCodeTextBox;
 
+    /*
+    public static void billingDetails(){
+        ReusableMethods.clickByJS(billingDetailsPageObj.firstnameTextBox);
+        actions.click(billingDetailsPageObj.firstnameTextBox).sendKeys( faker.name().firstName()).sendKeys(Keys.TAB).
+                sendKeys(faker.name().lastName()).sendKeys(Keys.TAB).
+                sendKeys(faker.company().name()).perform();
+        ReusableMethods.selectFromDropdown(billingDetailsPageObj.countryName,"Turkey");
+        actions.click(billingDetailsPageObj.streetAdressTextBox).sendKeys(faker.address().streetName()).perform();
+        getSelectedOptionFromDropdown(billingDetailsPageObj.stateName);
+        actions.click(billingDetailsPageObj.zipCodeTextBox).sendKeys(faker.address().zipCode()).sendKeys(Keys.TAB).
+                sendKeys(faker.phoneNumber().cellPhone()).perform();
+
+    }
+
+ */
+
 }

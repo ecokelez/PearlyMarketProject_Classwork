@@ -26,7 +26,6 @@ public class CheckoutPageWE {
     @FindBy (xpath = "//*[@class='cart-discount coupon-ersoy_kupon01']")
     public WebElement couponDiscount;
 
-
     @FindBy (xpath = "//*[text()='Total']")
     public WebElement totalHeader;
 
@@ -48,20 +47,10 @@ public class CheckoutPageWE {
     @FindBy (xpath = "//*[@id='place_order']")
     public WebElement placeOrderButton;
 
-    /*
-    Billing Adress
-     @FindBy (xpath = "//*[@id='billing_first_name']")
-    public WebElement firstnameTextBox;
+    @FindBy (xpath = "//*[@class='woocommerce-error']")
+    public WebElement errorCouponMessage;
 
-    @FindBy (xpath = "//*[@id='select2-billing_country-container']")
-    public  WebElement countryNameTextBox;
 
-    @FindBy (xpath = "//*[@id='select2-billing_country-container']")
-    public WebElement countryNameTextBox02;
-
-    @FindBy (xpath = "//*[@id='billing_address_1']")
-    public WebElement streetAdressTextBox;
-     */
 
 
 

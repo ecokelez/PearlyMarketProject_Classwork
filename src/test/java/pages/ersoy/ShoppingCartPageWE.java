@@ -11,8 +11,8 @@ public class ShoppingCartPageWE {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//*[@class='showcoupon']")
-    public WebElement enterCodeButton;
+    @FindBy(xpath = "//*[@id='coupon_code']")
+    public WebElement enterCouponCodeButton;
 
     @FindBy (xpath = "//*[@name='apply_coupon']")
     public WebElement applyCouponButton;
