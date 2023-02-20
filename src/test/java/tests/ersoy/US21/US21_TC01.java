@@ -5,11 +5,8 @@ import pages.ersoy.*;
 import tests.ersoy.ersoy_utilities.ErsoyReusableMethods;
 import utilities.Driver;
 import utilities.ExtentReportsUtils;
-
 import static utilities.ReusableMethods.*;
 public class US21_TC01 extends ErsoyReusableMethods {
-
-
   CartPage_ForwardCheckoutPageWE cartPage_forwardCheckoutPageWE = new CartPage_ForwardCheckoutPageWE();
   CheckoutPageWE checkoutPageWE = new CheckoutPageWE();
   ShoppingCartPageWE shoppingCartPageWE = new ShoppingCartPageWE();
@@ -17,6 +14,7 @@ public class US21_TC01 extends ErsoyReusableMethods {
 
     @Test
     public void test01() {
+        ExtentReportsUtils.extentReportsSetUp("ersoy","US21_TC01_Test01");
         // Kullanici  https://pearlymarket.com/  adresine gider
         // Kullanıcı Sign in butonuna tiklar
         // Kullanici, acilan ekrandaki e-mail bolumune gecerli e-posta adresini girer.

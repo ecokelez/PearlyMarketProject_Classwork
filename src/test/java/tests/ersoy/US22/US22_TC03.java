@@ -7,17 +7,11 @@ import pages.ersoy.CheckoutPageWE;
 import tests.ersoy.ersoy_utilities.ErsoyReusableMethods;
 import utilities.Driver;
 import utilities.ExtentReportsUtils;
-
-
 import static org.testng.Assert.assertTrue;
 import static utilities.ReusableMethods.*;
 
 public class US22_TC03 extends ErsoyReusableMethods{
-
-    AddToCartPageWE addToCartPageWE = new AddToCartPageWE();
     CheckoutPageWE checkoutPageWE = new CheckoutPageWE();
-
-
     @Test
     public void test01() {
         ExtentReportsUtils.extentReportsSetUp("ersoy","US22_TC03_Test01");
@@ -27,7 +21,7 @@ public class US22_TC03 extends ErsoyReusableMethods{
         //Kullanici, acilan ekrandaki sifre girisine gecerli sifreyi girer.
         //Kullanici mavi SIGN IN  butonuna  tiklar.
         signInVendor();
-        ExtentReportsUtils.extentTest().info("Giris yapildi");
+        ExtentReportsUtils.extentTest().info("Vendor olarak giris yapildi");
         waitFor(3);
         //Kullanici sayfanın ust  kısmındaki arama kutusuna 'Macbook Laptop ' yazar.
         //Kullanici, arama kutusunun sag tarafındaki arama simgesine tıklar.
@@ -37,9 +31,8 @@ public class US22_TC03 extends ErsoyReusableMethods{
         //Kullanici urun sayfasında oldugunu dogrular.
         assertTrue(Driver.getDriver().getCurrentUrl().contains("https://pearlymarket.com/urun/apple-macbook-air-laptop/"));
         //Kullanici ADD TO CART butonuna tiklar
-        addToCartPageWE.addToCartButton.click();
         //Kullanıcı, sayfada yesil renkli " 'Apple Macbook Air Laptop ' has been added to your cart " mesajinin  gorundugunu dogrular
-        assertTrue(addToCartPageWE.addToCartMessage.isDisplayed());
+        addToCart();
         ExtentReportsUtils.extentTest().pass(" Sayfada 'Apple Macbook Air Laptop  has been added to your cart' mesaji dogrulandi");
         waitFor(3);
         //Kullanıcı, sag ust arafında gorunen Cart butonuna  tiklar.

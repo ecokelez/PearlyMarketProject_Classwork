@@ -1,13 +1,11 @@
 package tests.ersoy.ersoy_utilities;
-
-
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import pages.ersoy.*;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import  utilities.ReusableMethods;
+
 import static utilities.ReusableMethods.*;
 
 
@@ -21,6 +19,7 @@ public class ErsoyReusableMethods  {
      public MyAccountPageWE myAccountPageObj = new MyAccountPageWE();
      public ShoppingCartPageWE shoppingCartPageObj = new ShoppingCartPageWE();
      public AddToCartPageWE addToCartPageObj = new AddToCartPageWE();
+
 
 
 

@@ -7,7 +7,7 @@
                     <include name="test01"/>
                 </methods>
             </class>
-            <class name="tests.ersoy.US22.US22_TC02">
+            <class name="tests.ersoy.US21.US21_TC01">
                 <methods>
                     <exclude name="test01"/>
                 </methods>

@@ -6,15 +6,13 @@ import pages.ersoy.CheckoutPageWE;
 import tests.ersoy.ersoy_utilities.ErsoyReusableMethods;
 import utilities.Driver;
 import utilities.ExtentReportsUtils;
-
 import static utilities.ReusableMethods.getScreenshot;
 import static utilities.ReusableMethods.waitFor;
 public class US21_TC03 extends ErsoyReusableMethods {
-
     CheckoutPageWE checkoutPageWE = new CheckoutPageWE();
-
     @Test
     public void test01() {
+        ExtentReportsUtils.extentReportsSetUp("ersoy","US21_TC03_Test01");
         //Kullanici  https://pearlymarket.com/  adresine gider
         //Kullanıcı Sign in butonuna tiklar
         //Kullanici, acilan ekrandaki e-mail bolumune gecerli e-posta adresini girer.

@@ -7,10 +7,7 @@ import pages.ersoy.HomePageWE;
 import tests.ersoy.ersoy_utilities.ErsoyReusableMethods;
 import utilities.Driver;
 import utilities.ExtentReportsUtils;
-
 import static utilities.ReusableMethods.*;
-
-
 public class US21_TC02 extends ErsoyReusableMethods {
 
     HomePageWE homePageWE = new HomePageWE();
